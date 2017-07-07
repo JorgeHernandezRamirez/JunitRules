@@ -17,7 +17,7 @@ public class TimeoutRuleTest {
     @Rule
     public Timeout timeout = Timeout.builder().withTimeout(100L, TimeUnit.MILLISECONDS).build();
 
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void shouldEndUntil100Milliseconds() {
         assertTrue(true);
     }
